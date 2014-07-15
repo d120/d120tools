@@ -1,0 +1,5 @@
+*.pyc
+*~
+\#*#
+d120tools/local_settings.py
+
