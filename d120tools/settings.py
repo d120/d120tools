@@ -36,7 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apacheauth'
+    'apacheauth',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -52,6 +52,7 @@ ROOT_URLCONF = 'd120tools.urls'
 
 WSGI_APPLICATION = 'd120tools.wsgi.application'
 
+AUTH_USER_MODEL = 'apacheauth.User'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
@@ -67,12 +68,12 @@ DATABASES = {
 }
 
 PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.SHA1PasswordHasher',
     'django.contrib.auth.hashers.CryptPasswordHasher',
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
     'django.contrib.auth.hashers.BCryptPasswordHasher',
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
-    'django.contrib.auth.hashers.SHA1PasswordHasher',
     'django.contrib.auth.hashers.MD5PasswordHasher',
 )
 

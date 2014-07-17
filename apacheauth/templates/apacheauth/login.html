@@ -10,10 +10,12 @@
 {% endblock %}
 
 {% block content %}
-<form action="{% url "mysite_login" %}" method="post" accept-charset="utf-8">
+<form action="{% url "mysite_login" %}" method="post" accept-charset="utf-8" class="multilineform">
     {{ form }}
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ next }}" />
+    <div class="btn-row">
     <input class="btn btn-default" type="submit" value="Login" />
+    </div>
 </form>
 {% endblock %}

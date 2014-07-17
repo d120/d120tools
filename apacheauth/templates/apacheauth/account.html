@@ -1,0 +1,20 @@
+{% extends "apacheauth/base.html" %}
+
+{% block content %}
+Hallo <i>{{user.first_name}} {{user.last_name}}</i>, Du bist eingeloggt als <i>{{user.get_short_name}}</i>.
+
+<p>&#187; E-Mail-Adresse: <i>{{user.email}}</i></p>
+
+<p>&#187; Deine Gruppen:</p>
+
+<ul>
+{% for group in user.groups.all %}
+<li>{{group.name}}</li>
+{% endfor %}
+</ul>
+
+<p>&#187; <a href="/accounts/change_password/">Passwort ändern</a></p>
+<p>&#187; <a href="/logout/">Ausloggen</a></p>
+
+
+{% endblock %}
